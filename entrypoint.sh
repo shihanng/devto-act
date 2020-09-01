@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 echo $SKIP_GENERATE
 
 for f in ${1}
 do
-  devto generate "${f}"
+  sh -c "devto generate ${f}"
 done
