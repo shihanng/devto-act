@@ -5,8 +5,14 @@ inputs:
     description: "Skip generation of links"
     required: false
     default: "false"
+  markdown_files:
+    description: "Path to markdown files (space separated) to be submitted"
+    required: true
+
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.markdown_files }}
   env:
     SKIP_GENERATE: ${{ inputs.skip_generate }}

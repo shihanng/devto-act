@@ -13,3 +13,7 @@ jobs:
         uses: ./
         with:
           skip_generate: "true"
+          markdown_files: "./test_markdowns/sample_1.md ./test_markdowns/sample_2.md"
+      - name: Check status
+        run: |
+          git status
