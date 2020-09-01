@@ -1,0 +1,12 @@
+name: "devto-act"
+description: "GitHub Actions to publish to dev.to"
+inputs:
+  skip_generate:
+    description: "Skip generation of links"
+    required: false
+    default: "false"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    SKIP_GENERATE: ${{ inputs.skip_generate }}
