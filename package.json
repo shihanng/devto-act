@@ -5,5 +5,10 @@
     "test": "bats __tests__"
   },
   "author": "Shi Han NG",
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "bats": "^1.1.0",
+    "bats-assert": "^2.0.0",
+    "bats-support": "^0.3.0"
+  }
 }
