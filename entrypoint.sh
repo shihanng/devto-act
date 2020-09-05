@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 if [ -z "${SKIP_GENERATE}" ]
 then
     for f in ${1}
