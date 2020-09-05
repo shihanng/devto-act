@@ -23,6 +23,14 @@ jobs:
         run: |
           npm test -- __tests__/tests_skip_generate.bats
 
+      - name: Test generate
+        uses: ./
+        with:
+          markdown_files: "./test_markdowns/sample_1/sample_1.md ./test_markdowns/sample_2/sample_2.md"
+      - name: Test generate (check)
+        run: |
+          npm test -- __tests__/tests_generate.bats
+
       - name: Check status
         run: |
           git status
