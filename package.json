@@ -2,7 +2,7 @@
   "name": "devto-act",
   "main": "index.js",
   "scripts": {
-    "test": "bats __tests__"
+    "test": "bats"
   },
   "author": "Shi Han NG",
   "license": "SEE LICENSE IN LICENSE",
