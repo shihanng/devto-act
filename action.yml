@@ -4,7 +4,6 @@ inputs:
   skip_generate:
     description: "Skip generation of links"
     required: false
-    default: "false"
   markdown_files:
     description: "Path to markdown files (space separated) to be submitted"
     required: true
