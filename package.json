@@ -1,0 +1,9 @@
+{
+  "name": "devto-act",
+  "main": "index.js",
+  "scripts": {
+    "test": "bats __tests__"
+  },
+  "author": "Shi Han NG",
+  "license": "SEE LICENSE IN LICENSE"
+}
