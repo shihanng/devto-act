@@ -9,11 +9,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: devto-act
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+      - run: npm install
+
+      - name: Test skip_generate
         uses: ./
         with:
           skip_generate: "true"
+          dry_run: "true"
+          published: "true"
           markdown_files: "./test_markdowns/sample_1/sample_1.md ./test_markdowns/sample_2/sample_2.md"
+      - name: Test skip_generate (check)
+        run: |
+          npm test -- __tests__/tests_skip_generate.bats
+
+      - name: Test generate
+        uses: ./
+        with:
+          dry_run: "true"
+          prefix: "prefix/this/path/"
+          markdown_files: "./test_markdowns/sample_1/sample_1.md ./test_markdowns/sample_2/sample_2.md"
+      - name: Test generate (check)
+        run: |
+          npm test -- __tests__/tests_generate.bats
+
       - name: Check status
         run: |
           git status
