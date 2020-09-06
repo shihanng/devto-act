@@ -22,7 +22,7 @@ do
   args=()
   [[ -n $DRY_RUN ]] && args+=( '--dry-run' )
   [[ -n $PUBLISHED ]] && args+=( '--published' )
-  [[ -n $PREFIX_VAL ]] && args+=( "--prefix ${PREFIX_VAL}/$(dirname "${f}")" )
+  [[ -n $PREFIX_VAL ]] && args+=( "--prefix ${PREFIX_VAL}/$(dirname "${f}")/" )
 
   set -x; bash -c "devto submit ${args[*]} ${f}"; set +x
 done
