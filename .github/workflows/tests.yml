@@ -18,6 +18,7 @@ jobs:
         uses: ./
         with:
           skip_generate: "true"
+          dry_run: "true"
           markdown_files: "./test_markdowns/sample_1/sample_1.md ./test_markdowns/sample_2/sample_2.md"
       - name: Test skip_generate (check)
         run: |
@@ -26,6 +27,7 @@ jobs:
       - name: Test generate
         uses: ./
         with:
+          dry_run: "true"
           markdown_files: "./test_markdowns/sample_1/sample_1.md ./test_markdowns/sample_2/sample_2.md"
       - name: Test generate (check)
         run: |
