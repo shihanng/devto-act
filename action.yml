@@ -1,6 +1,9 @@
 name: "devto-act"
 description: "GitHub Actions to publish to dev.to"
 inputs:
+  devto_api_key:
+    description: "API key for authentication"
+    required: false
   skip_generate:
     description: "Skip generation of links"
     required: false
@@ -23,6 +26,7 @@ runs:
   args:
     - ${{ inputs.markdown_files }}
   env:
+    DEVTO_API_KEY: ${{ inputs.devto_api_key }}
     SKIP_GENERATE: ${{ inputs.skip_generate }}
     DRY_RUN: ${{ inputs.dry_run }}
     PUBLISHED: ${{ inputs.published }}
