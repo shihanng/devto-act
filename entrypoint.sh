@@ -10,20 +10,19 @@ then
     done
 fi
 
-args=()
-[[ -n $DRY_RUN ]] && args+=( '--dry-run' )
-[[ -n $PUBLISHED ]] && args+=( '--published' )
-
 PREFIX_VAL=""
 
 if [ -n "${AUTO_PREFIX}" ]
 then
-    PREFIX_VAL="https://raw.githubusercontent.com/shihanng/articles/${GITHUB_REF}"
+    PREFIX_VAL="https://raw.githubusercontent.com/shihanng/articles/${GITHUB_REF#refs/heads/}"
 fi
-
-[[ -n $PREFIX_VAL ]] && args+=( "--prefix ${PREFIX_VAL}" )
 
 for f in ${1}
 do
+  args=()
+  [[ -n $DRY_RUN ]] && args+=( '--dry-run' )
+  [[ -n $PUBLISHED ]] && args+=( '--published' )
+  [[ -n $PREFIX_VAL ]] && args+=( "--prefix ${PREFIX_VAL}/$(dirname "${f}")" )
+
   set -x; bash -c "devto submit ${args[*]} ${f}"; set +x
 done
