@@ -1,12 +1,12 @@
 #!/bin/bash
 
-set -xe
+set -e
 
 if [ -z "${SKIP_GENERATE}" ]
 then
     for f in ${1}
     do
-      bash -c "devto generate ${f}"
+      set -x; bash -c "devto generate ${f}"; set +x
     done
 fi
 
@@ -17,5 +17,5 @@ args=()
 
 for f in ${1}
 do
-  bash -c "devto submit ${args[*]} ${f}"
+  set -x; bash -c "devto submit ${args[*]} ${f}"; set +x
 done
