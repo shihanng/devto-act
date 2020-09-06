@@ -14,7 +14,8 @@ PREFIX_VAL=""
 
 if [ -n "${AUTO_PREFIX}" ]
 then
-    PREFIX_VAL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_REF#refs/heads/}"
+    REF="${GITHUB_HEAD_REF:-$GITHUB_REF}"
+    PREFIX_VAL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${REF#refs/heads/}"
 fi
 
 for f in ${1}
