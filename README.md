@@ -23,9 +23,9 @@ Make the article public if non empty.
 
 Dry run if not empty. Will not send to [DEV](https://dev.to/).
 
-### `prefix`
+### `auto_prefix`
 
-Prefix (cover) image links with the given value. Will be applied to the `devto submit` as the value of `--prefix` flag.
+Generate prefix (cover) image links based on the branch and path to markdown files. Will be applied to the `devto submit` as the value of `--prefix` flag.
 
 ### `markdown_files`
 
