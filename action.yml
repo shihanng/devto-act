@@ -13,8 +13,8 @@ inputs:
   dry_run:
     description: "Dry run if not empty. Will not send to dev.to"
     required: false
-  prefix:
-    description: "Prefix (cover) image links with the given value"
+  auto_prefix:
+    description: "Generate prefix (cover) image links based on the branch and path to markdown files"
     required: false
   markdown_files:
     description: "Path to markdown files (space separated) to be submitted"
@@ -30,7 +30,7 @@ runs:
     SKIP_GENERATE: ${{ inputs.skip_generate }}
     DRY_RUN: ${{ inputs.dry_run }}
     PUBLISHED: ${{ inputs.published }}
-    PREFIX: ${{ inputs.prefix }}
+    AUTO_PREFIX: ${{ inputs.auto_prefix }}
 
 branding:
   icon: "upload"
