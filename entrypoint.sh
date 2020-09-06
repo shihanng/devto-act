@@ -12,6 +12,7 @@ fi
 
 args=()
 [[ -n $DRY_RUN ]] && args+=( '--dry-run' )
+[[ -n $PUBLISHED ]] && args+=( '--published' )
 
 for f in ${1}
 do

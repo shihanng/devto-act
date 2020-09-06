@@ -4,6 +4,9 @@ inputs:
   skip_generate:
     description: "Skip generation of links"
     required: false
+  published:
+    description: "Make the article public if non empty"
+    required: false
   dry_run:
     description: "Dry run if not empty. Will not send to dev.to"
     required: false
@@ -19,3 +22,4 @@ runs:
   env:
     SKIP_GENERATE: ${{ inputs.skip_generate }}
     DRY_RUN: ${{ inputs.dry_run }}
+    PUBLISHED: ${{ inputs.published }}
