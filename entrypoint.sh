@@ -13,6 +13,7 @@ fi
 args=()
 [[ -n $DRY_RUN ]] && args+=( '--dry-run' )
 [[ -n $PUBLISHED ]] && args+=( '--published' )
+[[ -n $PREFIX ]] && args+=( "--prefix ${PREFIX}" )
 
 for f in ${1}
 do

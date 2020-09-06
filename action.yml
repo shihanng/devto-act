@@ -10,6 +10,9 @@ inputs:
   dry_run:
     description: "Dry run if not empty. Will not send to dev.to"
     required: false
+  prefix:
+    description: "Prefix (cover) image links with the given value"
+    required: false
   markdown_files:
     description: "Path to markdown files (space separated) to be submitted"
     required: true
@@ -23,3 +26,4 @@ runs:
     SKIP_GENERATE: ${{ inputs.skip_generate }}
     DRY_RUN: ${{ inputs.dry_run }}
     PUBLISHED: ${{ inputs.published }}
+    PREFIX: ${{ inputs.prefix }}
