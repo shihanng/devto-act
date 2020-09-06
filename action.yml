@@ -27,3 +27,7 @@ runs:
     DRY_RUN: ${{ inputs.dry_run }}
     PUBLISHED: ${{ inputs.published }}
     PREFIX: ${{ inputs.prefix }}
+
+branding:
+  icon: "upload"
+  color: "gray-dark"
