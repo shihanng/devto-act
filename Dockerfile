@@ -1,4 +1,4 @@
-FROM shihanng/devto:v0.0.5 as tooling
+FROM shihanng/devto:v0.0.6 as tooling
 
 FROM alpine:3.6 as alpine
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
