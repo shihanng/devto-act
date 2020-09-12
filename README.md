@@ -30,3 +30,15 @@ Generate prefix (cover) image links based on the branch and path to markdown fil
 ### `markdown_files`
 
 **Required** Path to markdown files (space separated) to be submitted. Can be relative to the root of the repository.
+
+## Example Usage
+
+```yml
+- name: Publish to DEV
+  uses: shihanng/devto-act@v0.0.6
+  with:
+    auto_prefix: "yes"
+    markdown_files: "filename.md"
+  env:
+    DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+```
